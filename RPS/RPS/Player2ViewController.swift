@@ -11,15 +11,22 @@ import UIKit
 class Player2ViewController: UIViewController {
     
     @IBOutlet weak var msgLBL: UILabel!
-    var modelObj: RPS = RPS()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if modelObj.player2Choice == .None {
+        if AppDelegate.modelObj.player2Choice == .None {
             msgLBL.text = "Make a selection."
         } else {
-            msgLBL.text = "Selection made: \(modelObj.player1Choice) \nchange if you want."
+            msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if AppDelegate.modelObj.player2Choice == .None {
+            msgLBL.text = "Make a selection."
+        } else {
+            msgLBL.text = "Selection made: \(AppDelegate.modelObj.player2Choice) \nchange if you want."
         }
     }
 
@@ -29,18 +36,18 @@ class Player2ViewController: UIViewController {
     }
 
     @IBAction func rockBT(_ sender: UIButton) {
-         modelObj.player2Choice = .Rock
-         msgLBL.text = "Selection made: \(modelObj.player2Choice) \nchange if you want."
+         AppDelegate.modelObj.choosePlayer2(pick: .Rock)
+         msgLBL.text = "Selection made: \(AppDelegate.modelObj.player2Choice) \nchange if you want."
     }
     
     @IBAction func paperBT(_ sender: UIButton) {
-        modelObj.player2Choice = .Paper
-        msgLBL.text = "Selection made: \(modelObj.player2Choice) \nchange if you want."
+        AppDelegate.modelObj.choosePlayer2(pick: .Paper)
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player2Choice) \nchange if you want."
     }
     
     @IBAction func scissorBT(_ sender: UIButton) {
-        modelObj.player2Choice = .Scissor
-        msgLBL.text = "Selection made: \(modelObj.player2Choice) \nchange if you want."
+        AppDelegate.modelObj.choosePlayer2(pick: .Scissor)
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player2Choice) \nchange if you want."
     }
     
 }

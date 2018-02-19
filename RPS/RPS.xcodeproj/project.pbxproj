@@ -14,6 +14,7 @@
 		60748AD0203A2CC50062A9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60748ACF203A2CC50062A9A9 /* Assets.xcassets */; };
 		60748AD3203A2CC50062A9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60748AD1203A2CC50062A9A9 /* LaunchScreen.storyboard */; };
 		B8EB7ABC203A3AB20092634E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB7ABB203A3AB20092634E /* Model.swift */; };
+		B8EB7AE0203A57CA0092634E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB7ADF203A57CA0092634E /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		60748AD2203A2CC50062A9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60748AD4203A2CC50062A9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8EB7ABB203A3AB20092634E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B8EB7ADF203A57CA0092634E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		60748AC5203A2CC50062A9A9 /* RPS */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB7ADF203A57CA0092634E /* ResultsViewController.swift */,
 				60748AC6203A2CC50062A9A9 /* AppDelegate.swift */,
 				60748AC8203A2CC50062A9A9 /* Player2ViewController.swift */,
 				60748ACA203A2CC50062A9A9 /* Player1ViewController.swift */,
@@ -145,6 +148,7 @@
 				60748ACB203A2CC50062A9A9 /* Player1ViewController.swift in Sources */,
 				60748AC7203A2CC50062A9A9 /* AppDelegate.swift in Sources */,
 				60748AC9203A2CC50062A9A9 /* Player2ViewController.swift in Sources */,
+				B8EB7AE0203A57CA0092634E /* ResultsViewController.swift in Sources */,
 				B8EB7ABC203A3AB20092634E /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

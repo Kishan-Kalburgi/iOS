@@ -11,17 +11,18 @@ import UIKit
 class Player1ViewController: UIViewController {
 
     @IBOutlet weak var msgLBL: UILabel!
-    var modelObj: RPS = RPS()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if modelObj.player1Choice == .None {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if AppDelegate.modelObj.player1Choice == .None {
             msgLBL.text = "Make a selection."
-            print("testing")
         } else {
-            msgLBL.text = "Selection made: \(modelObj.player1Choice) \nchange if you want."
-            print("test2")
+            msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
         }
     }
 
@@ -31,19 +32,18 @@ class Player1ViewController: UIViewController {
     }
    
     @IBAction func rockBT(_ sender: UIButton) {
-        modelObj.player1Choice = .Rock
-        msgLBL.text = "Selection made: \(modelObj.player1Choice) \nchange if you want."
+        AppDelegate.modelObj.choosePlayer1(pick: .Rock)
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
     }    
     
     @IBAction func paperBT(_ sender: UIButton) {
-        modelObj.player1Choice = .Paper
-        msgLBL.text = "Selection made: \(modelObj.player1Choice) \nchange if you want."
+        AppDelegate.modelObj.choosePlayer1(pick: .Paper)
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
     }
     
     @IBAction func scissorBT(_ sender: UIButton) {
-        modelObj.player1Choice = .Scissor
-        msgLBL.text = "Selection made: \(modelObj.player1Choice) \nchange if you want."
+        AppDelegate.modelObj.choosePlayer1(pick: .Scissor)
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
     }
-    
 }
 
