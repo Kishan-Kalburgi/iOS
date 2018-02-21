@@ -67,9 +67,13 @@ class ResultsViewController: UIViewController {
     
     @IBAction func p1NameBT(_ sender: UIButton) {
         AppDelegate.modelObj.player1Name = p1NameTF.text!
+        if AppDelegate.modelObj.player1Name != "" {
         p1NameLBL.text = AppDelegate.modelObj.player1Name
+        }
         AppDelegate.modelObj.player2Name = p2NameTF.text!
+        if AppDelegate.modelObj.player2Name != "" {
         p2NameLBL.text = AppDelegate.modelObj.player2Name
+        }
     }
     
 }
