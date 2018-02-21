@@ -20,9 +20,9 @@ class Player1ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if AppDelegate.modelObj.player1Choice == .None {
-            msgLBL.text = "Make a selection."
+            msgLBL.text = "Make a selection"
         } else {
-            msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
+            msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice)"
         }
         self.title = AppDelegate.modelObj.player1Name
     }
@@ -33,18 +33,33 @@ class Player1ViewController: UIViewController {
     }
    
     @IBAction func rockBT(_ sender: UIButton) {
+        if AppDelegate.modelObj.player1Choice == .None {
         AppDelegate.modelObj.choosePlayer1(pick: .Rock)
-        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice)"
+        } else {
+            msgLBL.text = "You can make selection only 1 time!!!\nYour Selection is \(AppDelegate.modelObj.player1Choice)"
+            msgLBL.textColor = UIColor.red
+        }
     }    
     
     @IBAction func paperBT(_ sender: UIButton) {
+        if AppDelegate.modelObj.player1Choice == .None {
         AppDelegate.modelObj.choosePlayer1(pick: .Paper)
-        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice)"
+        } else {
+            msgLBL.text = "You can make selection only 1 time!!!\nYour Selection is \(AppDelegate.modelObj.player1Choice)"
+            msgLBL.textColor = UIColor.red
+        }
     }
     
     @IBAction func scissorBT(_ sender: UIButton) {
+        if AppDelegate.modelObj.player1Choice == .None {
         AppDelegate.modelObj.choosePlayer1(pick: .Scissor)
-        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
+        msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice)"
+        } else {
+            msgLBL.text = "You can make selection only 1 time!!!\nYour Selection is \(AppDelegate.modelObj.player1Choice)"
+            msgLBL.textColor = UIColor.red
+        }
     }
 }
 

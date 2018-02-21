@@ -29,12 +29,29 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var p2NameTF: UITextField!
     @IBOutlet weak var p1NameLBL: UILabel!
     @IBOutlet weak var p2NameLBL: UILabel!
+    @IBOutlet weak var resp1IMG: UIImageView!
+    @IBOutlet weak var resp2IMG: UIImageView!
+    
     
     override func viewWillAppear(_ animated: Bool) {
+        resp1IMG.isHidden = true
+        resp2IMG.isHidden = true
         if AppDelegate.modelObj.haveResult() == true {
             resLBL.text = AppDelegate.modelObj.winner()
             p1ScoreLBL.text = String (AppDelegate.modelObj.player1Counter)
             p2ScoreLBL.text = String (AppDelegate.modelObj.player2Counter)
+            AppDelegate.modelObj.choosePlayer1(pick: .None)
+            AppDelegate.modelObj.choosePlayer2(pick: .None)
+        } else {
+            if AppDelegate.modelObj.player1Choice == .None && AppDelegate.modelObj.player2Choice == .None {
+                resLBL.text = "Make your selection on the other tabs"
+            }else  if AppDelegate.modelObj.player1Choice == .None {
+                resLBL.text = "\(AppDelegate.modelObj.player1Name) not made Selection"
+                resp1IMG.isHidden = false
+            }else  if AppDelegate.modelObj.player2Choice == .None {
+                resLBL.text = "\(AppDelegate.modelObj.player2Name) not made selection"
+                resp2IMG.isHidden = false
+            }
         }
     }
     @IBAction func rssetBT(_ sender: UIButton) {

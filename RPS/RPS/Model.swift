@@ -107,26 +107,26 @@ class RPS {
         } else {
             if player1Choice == .Rock {
                 if player2Choice == .Paper {
-                    res = "Player 2 wins"
+                    res = "\(player2Name) wins"
                     player2Counter += 1
                 } else {
-                    res = "Player 1 wins"
+                    res = "\(player1Name) wins"
                     player1Counter += 1
                 }
             } else if player1Choice == .Scissor {
                 if player2Choice == .Rock {
-                    res = "Player 2 wins"
+                    res = "\(player2Name) wins"
                     player2Counter += 1
                 } else {
-                    res = "Player 1 wins"
+                    res = "\(player1Name) wins"
                     player1Counter += 1
                 }
             } else if player1Choice == .Paper {
                 if player2Choice == .Scissor {
-                    res = "Player 2 wins"
+                    res = "\(player2Name) wins"
                     player2Counter += 1
                 } else {
-                    res = "Player 1 wins"
+                    res = "\(player1Name) wins"
                     player1Counter += 1
                 }
             }
