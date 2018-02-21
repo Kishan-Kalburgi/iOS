@@ -20,6 +20,7 @@ class Player2ViewController: UIViewController {
         } else {
             msgLBL.text = "Selection made: \(AppDelegate.modelObj.player1Choice) \nchange if you want."
         }
+        self.title = AppDelegate.modelObj.player2Name
     }
     
     override func viewWillAppear(_ animated: Bool) {

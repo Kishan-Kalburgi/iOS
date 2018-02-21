@@ -13,18 +13,83 @@ enum Choice {
 }
 
 class RPS {
-    var player1Choice: Choice
-    var player2Choice: Choice
+    private var _player1Choice: Choice
+    private var _player2Choice: Choice
+    private var _player1Counter: Int
+    private var _player2Counter: Int
+    private var _player1Name: String
+    private var _player2Name: String
+    
+    var player1Choice: Choice {
+        get{
+            return _player1Choice
+        }
+        set {
+            _player1Choice = newValue
+        }
+    }
+    
+    var player2Choice: Choice {
+        get{
+            return _player2Choice
+        }
+        set {
+            _player2Choice = newValue
+        }
+    }
+    
+    var player1Counter: Int {
+        get{
+            return _player1Counter
+        }
+        set {
+            _player1Counter = newValue
+        }
+    }
+    
+    var player2Counter: Int {
+        get{
+            return _player2Counter
+        }
+        set {
+            _player2Counter = newValue
+        }
+    }
+    
+    var player1Name: String {
+        get{
+            return _player1Name
+        }
+        set {
+            _player1Name = newValue
+        }
+    }
+    
+    var player2Name: String {
+        get{
+            return _player2Name
+        }
+        set {
+             _player2Name = newValue
+        }
+    }
     
     init() {
-        self.player1Choice = .None
-        self.player2Choice = .None
+        self._player1Choice = .None
+        self._player2Choice = .None
+        self._player1Counter = 0
+        self._player2Counter = 0
+        self._player1Name = "Player 1"
+        self._player2Name = "Player 2"
     }
     
     func reset() {
         self.player1Choice = .None
         self.player2Choice = .None
-        
+        self.player1Counter = 0
+        self.player2Counter = 0
+        player1Name = "Player 1"
+        player2Name = "Player 2"
     }
     
     func haveResult() -> Bool {
@@ -36,30 +101,37 @@ class RPS {
     }
     
     func winner() -> String {
+        var res: String = ""
         if(player1Choice == player2Choice) {
-            return "Its a Tie"
+            res = "Its a Tie"
         } else {
             if player1Choice == .Rock {
                 if player2Choice == .Paper {
-                    return "Player 2 wins"
+                    res = "Player 2 wins"
+                    player2Counter += 1
                 } else {
-                    return "Player 1 wins"
+                    res = "Player 1 wins"
+                    player1Counter += 1
                 }
             } else if player1Choice == .Scissor {
                 if player2Choice == .Rock {
-                    return "Player 2 wins"
+                    res = "Player 2 wins"
+                    player2Counter += 1
                 } else {
-                    return "Player 1 wins"
+                    res = "Player 1 wins"
+                    player1Counter += 1
                 }
             } else if player1Choice == .Paper {
                 if player2Choice == .Scissor {
-                    return "Player 2 wins"
+                    res = "Player 2 wins"
+                    player2Counter += 1
                 } else {
-                    return "Player 1 wins"
+                    res = "Player 1 wins"
+                    player1Counter += 1
                 }
             }
         }
-        return ""
+        return res
     }
     
     func choosePlayer1(pick:Choice){
